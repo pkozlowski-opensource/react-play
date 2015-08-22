@@ -33,8 +33,12 @@ gulp.task('js', function () {
 });
 
 gulp.task('play', ['html', 'js', 'libs'], function () {
+    var httpPlay = require('http-play');
+
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
+
+    httpPlay();
 });
 
 
