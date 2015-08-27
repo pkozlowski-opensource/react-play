@@ -7,4 +7,4 @@ React.render(< BsAlert />, document.body);
 //+ no issue with HTML lower-casing everything
 
 //- testing without DI is so retarded...
-//
+//- no UI customization by swapping "templates"?
