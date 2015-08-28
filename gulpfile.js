@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
 
 var PATHS = {
     src: {
@@ -23,9 +22,12 @@ gulp.task('libs', function () {
     return gulp.src(PATHS.lib).pipe(gulp.dest('dist'));
 });
 
-
 gulp.task('js', function () {
+    var babel = require('gulp-babel');
+    var plumber = require('gulp-plumber');
+
     return gulp.src(PATHS.src.js)
+        .pipe(plumber())
         .pipe(babel({
             "modules": "system"
         }))
