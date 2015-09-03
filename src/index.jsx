@@ -1,11 +1,19 @@
 import React from 'react';
-import {BsAlert} from './bs-alert/alert';
 
-React.render(
-  <BsAlert onClose={console.log.bind(console)} type="success" dismissible={false}>
-    <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
-  </BsAlert>
-  , document.body);
+import {BsAlert} from './bs-alert/alert';
+import {BsPagination} from './bs-pagination/pagination';
+
+
+class BsDemo extends React.Component {
+  render() {
+    return <BsAlert onClose={console.log.bind(console)} type="success" dismissible={false}>
+      <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+    </BsAlert>;
+  }
+}
+
+
+React.render(<BsDemo/>, document.body);
 
 //+ self-closing tags
 //+ no issue with HTML lower-casing everything
