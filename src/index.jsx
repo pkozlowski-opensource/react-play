@@ -6,9 +6,13 @@ import {BsPagination} from './bs-pagination/pagination';
 
 class BsDemo extends React.Component {
   render() {
-    return <BsAlert onClose={console.log.bind(console)} type="success" dismissible={false}>
-      <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
-    </BsAlert>;
+    return <div>
+      <BsAlert onClose={console.log.bind(console)} type="success" dismissible={false}>
+        <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
+      </BsAlert>
+      <hr/>
+      <BsPagination pageNo={2} collectionSize={100}/>
+    </div>;
   }
 }
 
