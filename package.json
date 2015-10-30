@@ -2,7 +2,7 @@
   "name": "react-play",
   "version": "1.0.0",
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.1"
   },
   "devDependencies": {
     "del": "^1.2.1",
