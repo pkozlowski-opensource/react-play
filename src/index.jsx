@@ -1,10 +1,29 @@
 import React from 'react';
-import {BsAlert} from './bs-alert/alert';
+import {MessageList} from './lists';
 
-React.render(< BsAlert />, document.body);
+export class App extends React.Component {
 
-//+ self-closing tags
-//+ no issue with HTML lower-casing everything
+    constructor(props) {
+        super(props);
+        this.state = {active: true};
+    }
 
-//- testing without DI is so retarded...
-//
+    toggleActive() {
+        this.setState({active: !this.state.active});
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.toggleActive.bind(this)}>Toggle active</button>
+                <MessageList>
+                    <message title="Foo" active={this.state.active}>Foo content</message>
+                    <message title="Bar">Bar content</message>
+                    <message title="Baz">Baz content</message>
+                </MessageList>
+            </div>
+        );
+    }
+}
+
+React.render((<App></App>), document.body);
